@@ -1,0 +1,11 @@
+1. Classes are starting with uppercase
+2. parentheses are close to the value name
+   ex) if(--) , not if (--) 
+   ex) void foo(--), not foo (--)
+3. Operators are separated from number and value
+   ex) for(int i = 0; i < 10; i++), not for(int i=0; i<10; i++)
+4. Commit formats 
+   new-feature
+   bug-fix
+   code-improve
+5. Spaces between sections
