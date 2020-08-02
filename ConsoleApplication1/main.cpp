@@ -11,11 +11,6 @@ int main()
 
     DataReader myDataReader(strText, strDictionary);
     cout << myDataReader.dic.size() << endl;
-    myDataReader.readUserSeparator(strText);
-
-    for (int i = 0; i < myDataReader.userText.size(); i++) {
-        cout << myDataReader.userText[i] << endl;
-    }
 
     for (int i = 0; i < myDataReader.userWords.size(); i++) {
         cout << myDataReader.userWords[i] << endl;

@@ -13,13 +13,15 @@ public:
 
 	std::vector<std::string> dic;
 	std::vector<std::string> userWords;
-	std::vector<std::string> userText;
-
-	void readUserSeparator(const std::string inputLine);
+	
 
 private:
 	void readDic(); //read the inputfile
 	void readUserText();
+	void readUserSeparator(const std::string& inputLine);
+	bool isAlphabet(const char& inputChar);
+	bool isLower(char& inputChar);
+	void lowerCase(const std::string& inputString) const;
 
 	std::string userTextFileName_;
 	std::string dicFileName_;
