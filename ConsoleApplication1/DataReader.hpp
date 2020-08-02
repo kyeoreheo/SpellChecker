@@ -20,8 +20,8 @@ private:
 	void readUserText();
 	void readUserSeparator(const std::string& inputLine);
 	bool isAlphabet(const char& inputChar);
-	bool isLower(char& inputChar);
-	void lowerCase(const std::string& inputString) const;
+	bool isLower(const char& inputChar) const;
+	std::string lowerCase(const std::string& inputString) const;
 
 	std::string userTextFileName_;
 	std::string dicFileName_;

@@ -44,18 +44,20 @@ bool DataReader::isAlphabet(const char& inputChar) {
     return (inputChar > 64 && inputChar < 91) || (inputChar > 96 && inputChar < 123);
 }
 
-bool DataReader::isLower(char& inputChar) {
+bool DataReader::isLower(const char& inputChar) const{
     return (inputChar > 96 && inputChar < 123);
 }
 
-void DataReader::lowerCase(const std::string& inputString) const{
+std::string DataReader::lowerCase(const std::string& inputString) const{
     std::string result = "";
     for (int i = 0; i < inputString.size(); i++) {
         char currentChar = inputString[i];
-        if (isLower(currentChar)) {
-
+        if (!isLower(currentChar)) {
+            currentChar += 32;
         }
+        result += currentChar;
     }
+    return result;
 }
 
 //create vector that contains all player-input strings except spaces and enters
