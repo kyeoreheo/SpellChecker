@@ -9,13 +9,22 @@ class DataReader {
 public:
 	DataReader();
 	~DataReader();
-	DataReader(const std::string& inputFileName);
+	DataReader(const std::string& inputFileName, const std::string& inputDic);
+
 	std::vector<std::string> dic;
+	std::vector<std::string> userWords;
+	
 
 private:
-	void readFile(); //read the inputfile and generate pokemonData and firendsData
+	void readDic(); //read the inputfile
+	void readUserText();
+	void readUserSeparator(const std::string& inputLine);
+	bool isAlphabet(const char& inputChar);
+	bool isLower(const char& inputChar) const;
+	std::string lowerCase(const std::string& inputString) const;
 
-	std::string fileName_;
+	std::string userTextFileName_;
+	std::string dicFileName_;
 	std::string line_;
 };
 
