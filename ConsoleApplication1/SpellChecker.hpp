@@ -7,10 +7,13 @@ class SpellChecker
 {
 public:
     SpellChecker();
-    SpellChecker(const std::string& inputDictionary);
-    ~SpellChecker();     
-private:
+    SpellChecker(const std::vector<std::string>& inputDictionary, std::vector<std::string>& userInput);
+    ~SpellChecker();
 
+
+private:
+    std::vector<std::string> dictionary_;
+    std::vector<std::string> userInputWords_;
 };
 
 #endif /* SpellCheck_hpp */

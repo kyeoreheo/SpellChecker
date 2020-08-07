@@ -23,7 +23,7 @@ void DataReader::readDic() {
     std::ifstream file(dicFileName_);
     if (file.is_open()) {
         while (getline(file, line_)) {
-            dic.push_back(line_);
+            dictionary.push_back(line_);
         }
         file.close();
     }
