@@ -11,7 +11,7 @@ public:
 	~DataReader();
 	DataReader(const std::string& inputFileName, const std::string& inputDic);
 
-	std::vector<std::string> dic;
+	std::vector<std::string> dictionary;
 	std::vector<std::string> userWords;
 	
 
