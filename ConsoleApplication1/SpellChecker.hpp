@@ -15,4 +15,5 @@ private:
 
 };
 
+#include "SpellChecker.cpp"
 #endif /* SpellCheck_hpp */
