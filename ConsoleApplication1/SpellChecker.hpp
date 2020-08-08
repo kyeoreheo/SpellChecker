@@ -12,11 +12,13 @@ public:
     ~SpellChecker();
 
     void checkSpelling();
-
+    void insertion();
 
 private:
     std::vector<std::string> dictionary_;
     std::vector<std::string> userInputWords_;
+    std::vector<std::string> incorrectWords_;
+    std::vector<std::string> fixedWords_;
 };
 
 #endif /* SpellCheck_hpp */
