@@ -1,6 +1,7 @@
-﻿  DataReader.cpp
-D:\C++\Github\SpellChecker\ConsoleApplication1\DataReader.cpp(53,23): warning C4018: '<': signed/unsigned mismatch
-D:\C++\Github\SpellChecker\ConsoleApplication1\DataReader.cpp(66,23): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  Generating Code...
+﻿  SpellChecker.cpp
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(16,20): warning C4018: '<': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(18,21): warning C4018: '<': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(37,36): warning C4018: '<': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(38,33): warning C4018: '<=': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(43,23): warning C4018: '<': signed/unsigned mismatch
   ConsoleApplication1.vcxproj -> D:\C++\Github\SpellChecker\ConsoleApplication1\Debug\ConsoleApplication1.exe

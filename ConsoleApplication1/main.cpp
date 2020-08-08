@@ -17,6 +17,8 @@ int main()
     }*/
 
     SpellChecker mySpellChecker(myDataReader.dictionary, myDataReader.userWords);
-    //mySpellChecker.CheckWithVector(strText);
+    mySpellChecker.checkSpelling();
+    mySpellChecker.insertion();
+
     return 0;
 }
