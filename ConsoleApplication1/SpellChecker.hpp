@@ -1,5 +1,6 @@
 #ifndef SpellChecker_hpp
 #define SpellChecker_hpp
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -9,6 +10,8 @@ public:
     SpellChecker();
     SpellChecker(const std::vector<std::string>& inputDictionary, std::vector<std::string>& userInput);
     ~SpellChecker();
+
+    void checkSpelling();
 
 
 private:
