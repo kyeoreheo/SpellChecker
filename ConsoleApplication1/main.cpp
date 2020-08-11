@@ -20,7 +20,8 @@ int main()
     mySpellChecker.checkSpelling();
     //mySpellChecker.insertion();
     //mySpellChecker.deletion();
-    mySpellChecker.swap();
+    //mySpellChecker.swap();
+    mySpellChecker.replace();
 
     return 0;
 }
