@@ -19,7 +19,8 @@ int main()
     SpellChecker mySpellChecker(myDataReader.dictionary, myDataReader.userWords);
     mySpellChecker.checkSpelling();
     //mySpellChecker.insertion();
-    mySpellChecker.deletion();
+    //mySpellChecker.deletion();
+    mySpellChecker.swap();
 
     return 0;
 }

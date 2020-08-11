@@ -14,6 +14,7 @@ public:
     void checkSpelling();
     void insertion();
     void deletion();
+    void swap();
 
 private:
     std::vector<std::string> dictionary_;

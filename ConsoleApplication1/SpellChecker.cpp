@@ -69,3 +69,28 @@ void SpellChecker::deletion() {
 		}
 	}
 }
+
+void SpellChecker::swap() {
+	for (int wrongWordIndex = 0; wrongWordIndex < incorrectWords_.size(); wrongWordIndex++) {
+		for (int wordPos = 0; wordPos < incorrectWords_[wrongWordIndex].size()-1; wordPos++) {
+			for (int i = wordPos; i < incorrectWords_[wrongWordIndex].size()-1; i++) {
+				std::string currentWord = incorrectWords_[wrongWordIndex];
+				char currentChar = currentWord[i];
+				int nextPos = i + 1;
+				char secondChar = currentWord[nextPos];
+				std::cout << "CurrentChar: " << currentChar << std::endl;
+				std::cout << "SecondChar: " << secondChar << std::endl;
+				currentWord[i] = secondChar;
+				currentWord[nextPos] = currentChar;
+				std::cout << currentWord << std::endl;
+				for (int i = 0; i < dictionary_.size(); i++) {
+					if (currentWord == dictionary_[i]) {
+						std::cout << currentWord << std::endl;
+						fixedWords_.push_back(currentWord);
+						break;
+					}
+				}
+			}
+		}
+	}
+}
