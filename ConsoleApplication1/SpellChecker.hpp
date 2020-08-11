@@ -13,6 +13,7 @@ public:
 
     void checkSpelling();
     void insertion();
+    void deletion();
 
 private:
     std::vector<std::string> dictionary_;
