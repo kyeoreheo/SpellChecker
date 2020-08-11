@@ -4,4 +4,7 @@ D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(18,21): warning 
 D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(37,36): warning C4018: '<': signed/unsigned mismatch
 D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(38,33): warning C4018: '<=': signed/unsigned mismatch
 D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(43,23): warning C4018: '<': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(58,36): warning C4018: '<': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(59,33): warning C4018: '<=': signed/unsigned mismatch
+D:\C++\Github\SpellChecker\ConsoleApplication1\SpellChecker.cpp(62,22): warning C4018: '<': signed/unsigned mismatch
   ConsoleApplication1.vcxproj -> D:\C++\Github\SpellChecker\ConsoleApplication1\Debug\ConsoleApplication1.exe

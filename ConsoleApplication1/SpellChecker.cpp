@@ -53,3 +53,19 @@ void SpellChecker::insertion() {
 		}
 	}
 }
+
+void SpellChecker::deletion() {
+	for (int wordIndex = 0; wordIndex < incorrectWords_.size(); wordIndex++) {
+		for (int wordPos = 0; wordPos <= incorrectWords_[wordIndex].size(); wordPos++) {
+			std::string currentWord = incorrectWords_[wordIndex];
+			currentWord.erase(currentWord.begin() + wordPos);
+			for (int i = 0; i < dictionary_.size(); i++) {
+				if (currentWord == dictionary_[i]) {
+					//std::cout << currentWord << std::endl;
+					fixedWords_.push_back(currentWord);
+					break;
+				}
+			}
+		}
+	}
+}
