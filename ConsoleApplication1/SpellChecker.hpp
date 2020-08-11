@@ -22,4 +22,5 @@ private:
     std::vector<std::string> fixedWords_;
 };
 
+#include "SpellChecker.cpp"
 #endif /* SpellCheck_hpp */

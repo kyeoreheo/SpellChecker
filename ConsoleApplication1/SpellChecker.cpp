@@ -59,7 +59,7 @@ void SpellChecker::deletion() {
 		for (int wordPos = 0; wordPos <= incorrectWords_[wordIndex].size(); wordPos++) {
 			std::string currentWord = incorrectWords_[wordIndex];
 			currentWord.erase(currentWord.begin() + wordPos);
-			std::cout << currentWord << std::endl;
+			// std::cout << currentWord << std::endl;
 			for (int i = 0; i < dictionary_.size(); i++) {
 				if (currentWord == dictionary_[i]) {
 					std::cout << currentWord << std::endl;
@@ -67,7 +67,6 @@ void SpellChecker::deletion() {
 					break;
 				}
 
-				std::cout << currentWord << std::endl;
 			}
 		}
 	}
