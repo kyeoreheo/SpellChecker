@@ -96,3 +96,22 @@ void SpellChecker::swap() {
 		}
 	}
 }
+
+void SpellChecker::replace() {
+	for (int wordIndex = 0; wordIndex < incorrectWords_.size(); wordIndex++) {
+		for (int wordPos = 0; wordPos < incorrectWords_[wordIndex].size(); wordPos++) {
+			for (int c = 97; c < 123; c++) {
+				std::string currentWord = incorrectWords_[wordIndex];
+				currentWord[wordPos] = c;
+
+				for (int i = 0; i < dictionary_.size(); i++) {
+					if (currentWord == dictionary_[i]) {
+						//std::cout << currentWord << std::endl;
+						fixedWords_.push_back(currentWord);
+						break;
+					}
+				}
+			}
+		}
+	}
+}

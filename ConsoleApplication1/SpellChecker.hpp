@@ -15,6 +15,7 @@ public:
     void insertion();
     void deletion();
     void swap();
+    void replace();
 
 private:
     std::vector<std::string> dictionary_;
