@@ -59,14 +59,45 @@ void SpellChecker::deletion() {
 		for (int wordPos = 0; wordPos <= incorrectWords_[wordIndex].size(); wordPos++) {
 			std::string currentWord = incorrectWords_[wordIndex];
 			currentWord.erase(currentWord.begin() + wordPos);
-			// std::cout << currentWord << std::endl;
 			for (int i = 0; i < dictionary_.size(); i++) {
 				if (currentWord == dictionary_[i]) {
-					std::cout << currentWord << std::endl;
+					//std::cout << currentWord << std::endl;
 					fixedWords_.push_back(currentWord);
 					break;
 				}
+			}
+		}
+	}
+}
 
+void SpellChecker::swap() {
+	for (int wrongWordIndex = 0; wrongWordIndex < incorrectWords_.size(); wrongWordIndex++) {
+		
+		for (int wordPos = 0; wordPos < incorrectWords_[wrongWordIndex].size()-1; wordPos++) {
+			
+			for (int i = wordPos; i < incorrectWords_[wrongWordIndex].size()-1; i++) {
+				// std::cout << "wordPos: " << wordPos << ", i: " << i << std::endl;
+				std::string currentWord = incorrectWords_[wrongWordIndex];
+				char currentChar = currentWord[wordPos];
+				int nextPos = i + 1;
+				char secondChar = currentWord[nextPos];
+
+				// std::cout <<"before: " << currentWord << std::endl;
+				// std::cout << currentChar << " <-> " << secondChar << std::endl;
+
+				currentWord[wordPos] = secondChar;
+				currentWord[nextPos] = currentChar;
+
+				// std::cout << "after: " << currentWord << std::endl;
+				// std::cout << std::endl;
+
+				for (int i = 0; i < dictionary_.size(); i++) {
+					if (currentWord == dictionary_[i]) {
+						std::cout << currentWord << std::endl;
+						fixedWords_.push_back(currentWord);
+						break;
+					}
+				}
 			}
 		}
 	}
