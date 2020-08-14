@@ -10,6 +10,11 @@ SpellChecker::~SpellChecker() {
 SpellChecker::SpellChecker(const std::vector<std::string>& inputDictionary, std::vector<std::string>& userInput) {
 	dictionary_ = inputDictionary;
 	userInputWords_ = userInput;
+	checkSpelling();
+	/*insertion();*/
+	deletion();
+	/*swap();
+	replace();*/
 }
 
 void SpellChecker::checkSpelling() {

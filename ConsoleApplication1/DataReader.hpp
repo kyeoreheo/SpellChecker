@@ -27,5 +27,5 @@ private:
 	std::string dicFileName_;
 	std::string line_;
 };
-
+#include "DataReader.cpp"
 #endif
