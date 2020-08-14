@@ -88,12 +88,23 @@ void SpellChecker::swap() {
 				currentWord[wordPos] = secondChar;
 				currentWord[nextPos] = currentChar;
 
-				// std::cout << "after: " << currentWord << std::endl;
-				// std::cout << std::endl;
+
+		for (int currentWordPos = 0; currentWordPos < incorrectWords_[wrongWordIndex].size()-1; currentWordPos++) {
+			for (int i = currentWordPos; i < incorrectWords_[wrongWordIndex].size()-1; i++) {
+				
+				std::string currentWord = incorrectWords_[wrongWordIndex];
+
+				int nextWordPos = i + 1;
+				
+				char currentChar = currentWord[currentWordPos];
+				char secondChar = currentWord[nextWordPos];
+
+				currentWord[currentWordPos] = secondChar;
+				currentWord[nextWordPos] = currentChar;
 
 				for (int i = 0; i < dictionary_.size(); i++) {
 					if (currentWord == dictionary_[i]) {
-						std::cout << currentWord << std::endl;
+						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
 						break;
 					}
