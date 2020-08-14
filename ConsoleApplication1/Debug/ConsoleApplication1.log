@@ -1,3 +1,0 @@
-﻿  main.cpp
-D:\C++\Github\SpellChecker\ConsoleApplication1\main.cpp(20,23): warning C4018: '<': signed/unsigned mismatch
-  ConsoleApplication1.vcxproj -> D:\C++\Github\SpellChecker\ConsoleApplication1\Debug\ConsoleApplication1.exe
