@@ -17,11 +17,15 @@ int main()
     }*/
 
     SpellChecker mySpellChecker(myDataReader.dictionary, myDataReader.userWords);
-    mySpellChecker.checkSpelling();
+    for (int i = 0; i < mySpellChecker.fixedWords_.size(); i++) {
+        cout << mySpellChecker.fixedWords_[i] << endl;
+    }
+    cout << mySpellChecker.fixedWords_.size() << endl;
+    //mySpellChecker.checkSpelling();
     //mySpellChecker.insertion();
     //mySpellChecker.deletion();
     //mySpellChecker.swap();
-    mySpellChecker.replace();
+    //mySpellChecker.replace();
 
     return 0;
 }

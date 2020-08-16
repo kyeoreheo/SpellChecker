@@ -1,2 +1,0 @@
-D:\C++\Github\SpellChecker\ConsoleApplication1\Debug\ConsoleApplication1.exe
-D:\C++\Github\SpellChecker\ConsoleApplication1\Debug\ConsoleApplication1.pdb

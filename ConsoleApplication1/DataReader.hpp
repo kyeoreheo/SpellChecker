@@ -21,11 +21,13 @@ private:
 	void readUserSeparator(const std::string& inputLine);
 	bool isAlphabet(const char& inputChar);
 	bool isLower(const char& inputChar) const;
+	bool hasSpecChar(const char& inputChar) const;
+
 	std::string lowerCase(const std::string& inputString) const;
 
 	std::string userTextFileName_;
 	std::string dicFileName_;
 	std::string line_;
 };
-
+#include "DataReader.cpp"
 #endif
