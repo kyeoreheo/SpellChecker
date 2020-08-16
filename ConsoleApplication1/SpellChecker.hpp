@@ -12,18 +12,15 @@ public:
     ~SpellChecker();
 
     void checkSpelling();
-    void insertion();
-    void deletion();
-    void swap();
-    void replace();
-    //void suggestion();
+    void insertion(const std::string& currentIncorrectWord);
+    void deletion(const std::string& currentIncorrectWord);
+    void swap(const std::string& currentIncorrectWord);
+    void replace(const std::string& currentIncorrectWord);
     std::vector<std::string> fixedWords_;
 
 private:
     std::vector<std::string> dictionary_;
-    std::vector<std::string> userInputWords_;
-    std::vector<std::string> incorrectWords_;
-    
+    std::vector<std::string> userInputWords_;    
 };
 #include "SpellChecker.cpp"
 #endif /* SpellCheck_hpp */
