@@ -22,19 +22,21 @@ DataReader::DataReader(const std::string& inputFileName, const std::string& inpu
 void DataReader::readDic() {
     std::ifstream file(dicFileName_);
     if (file.is_open()) {
-    	int i = 0;
         while (getline(file, line_)) {
-        	while(i < line_.size()){
+        	for(int i = 0; i < line_.size(); i++){
         		if(hasSpecChar(line_[i])){
         			int lastIndex = line_.size()-1;
         			line_.erase(line_.begin() + lastIndex);
         		}
-        		i++;
         	}
         	dictionary.push_back(line_);
         }
         file.close();
     }
+/*    for(int i = 0; i < 100; i++){
+    	std::cout << "Word: " << dictionary[i] << std::endl;
+    	std::cout << " Size: " << dictionary[i].size() << std::endl;
+    }*/
 }
 
 void DataReader::readUserText() {
@@ -76,7 +78,7 @@ bool DataReader::isLower(const char& inputChar) const{
 }
 
 bool DataReader::hasSpecChar(const char& inputChar) const{
-	return (inputChar == 13);
+	return !(inputChar > 96 && inputChar < 123);
 }
 
 std::string DataReader::lowerCase(const std::string& inputString) const{

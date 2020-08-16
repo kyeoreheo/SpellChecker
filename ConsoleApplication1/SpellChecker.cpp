@@ -10,22 +10,11 @@ SpellChecker::~SpellChecker() {
 SpellChecker::SpellChecker(const std::vector<std::string>& inputDictionary, std::vector<std::string>& userInput) {
 	dictionary_ = inputDictionary;
 	userInputWords_ = userInput;
-	/*checkSpelling();
+	checkSpelling();
 	insertion();
 	deletion();
 	swap();
-	replace();*/
-	for(int i = 0; i < dictionary_.size(); i++){
-		std::string currentElement = dictionary_[i];
-		int lastIndex = currentElement.size()-1;
-		char lastChar = currentElement[lastIndex];
-		std::cout << "--------" << std::endl;
-		std::cout << "Element: " << currentElement << std::endl; 
-		std::cout << "Length: " << currentElement.size() << std::endl;
-		std::cout << "Last Element: " << currentElement[lastIndex] << std::endl;
-		std::cout << "Last Character: " << lastChar + 1 << std::endl;
-		std::cout << "--------" << std::endl;
-	}
+	replace();
 }
 
 void SpellChecker::checkSpelling() {
@@ -60,7 +49,7 @@ void SpellChecker::insertion() {
 					if (currentWord == dictionary_[i]) {
 						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
-						std::cout << "Insertion(): " << fixedWords_.size() << std::endl;
+						//std::cout << "Insertion(): " << currentWord << std::endl;
 						break;
 					}
 				}
@@ -81,7 +70,7 @@ void SpellChecker::deletion() {
 				if (currentWord == dictionary_[i]) {
 					//std::cout << currentWord << std::endl;
 					fixedWords_.push_back(currentWord);
-					std::cout << "Deletion(): " << fixedWords_.size() << std::endl;
+					//std::cout << "Deletion(): " << currentWord << std::endl;
 					break;
 				}
 			}
@@ -108,7 +97,7 @@ void SpellChecker::swap() {
 					if (currentWord == dictionary_[i]) {
 						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
-						std::cout << "Swap(): " << fixedWords_.size() << std::endl;
+						//std::cout << "Swap(): " << currentWord << std::endl;
 						break;
 					}
 				}
@@ -128,7 +117,7 @@ void SpellChecker::replace() {
 					if (currentWord == dictionary_[i]) {
 						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
-						std::cout << "Replace(): " << fixedWords_.size() << std::endl;
+						//std::cout << "Replace(): " << currentWord << std::endl;
 						break;
 					}
 				}
