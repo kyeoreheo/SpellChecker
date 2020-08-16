@@ -22,8 +22,16 @@ DataReader::DataReader(const std::string& inputFileName, const std::string& inpu
 void DataReader::readDic() {
     std::ifstream file(dicFileName_);
     if (file.is_open()) {
+    	int i = 0;
         while (getline(file, line_)) {
-            dictionary.push_back(line_);
+        	while(i < line_.size()){
+        		if(hasSpecChar(line_[i])){
+        			int lastIndex = line_.size()-1;
+        			line_.erase(line_.begin() + lastIndex);
+        		}
+        		i++;
+        	}
+        	dictionary.push_back(line_);
         }
         file.close();
     }
@@ -40,12 +48,35 @@ void DataReader::readUserText() {
     }
 }
 
+//create vector that contains all player-input strings except spaces and enters
+void DataReader::readUserSeparator(const std::string& inputLine) {
+    std::string temp = "";
+    for (int i = 0; i < inputLine.size(); i++) {
+        char currentChar = inputLine[i];
+        if (isAlphabet(currentChar) && !hasSpecChar(currentChar)) {
+            temp += inputLine[i];
+        }
+        else if (temp.size() > 0) {
+            userWords.push_back(lowerCase(temp));
+            temp = "";
+        }
+    }
+    if (temp.size() > 0) {
+        userWords.push_back(temp);
+    }
+
+}
+
 bool DataReader::isAlphabet(const char& inputChar) {
     return (inputChar > 64 && inputChar < 91) || (inputChar > 96 && inputChar < 123);
 }
 
 bool DataReader::isLower(const char& inputChar) const{
     return (inputChar > 96 && inputChar < 123);
+}
+
+bool DataReader::hasSpecChar(const char& inputChar) const{
+	return (inputChar == 13);
 }
 
 std::string DataReader::lowerCase(const std::string& inputString) const{
@@ -58,23 +89,4 @@ std::string DataReader::lowerCase(const std::string& inputString) const{
         result += currentChar;
     }
     return result;
-}
-
-//create vector that contains all player-input strings except spaces and enters
-void DataReader::readUserSeparator(const std::string& inputLine) {
-    std::string temp = "";
-    for (int i = 0; i < inputLine.size(); i++) {
-        char currentChar = inputLine[i];
-        if (isAlphabet(currentChar)) {
-            temp += inputLine[i];
-        }
-        else if (temp.size() > 0) {
-            userWords.push_back(lowerCase(temp));
-            temp = "";
-        }
-    }
-    if (temp.size() > 0) {
-        userWords.push_back(temp);
-    }
-
 }

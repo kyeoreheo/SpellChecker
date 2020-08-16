@@ -10,11 +10,22 @@ SpellChecker::~SpellChecker() {
 SpellChecker::SpellChecker(const std::vector<std::string>& inputDictionary, std::vector<std::string>& userInput) {
 	dictionary_ = inputDictionary;
 	userInputWords_ = userInput;
-	checkSpelling();
-	/*insertion();*/
+	/*checkSpelling();
+	insertion();
 	deletion();
-	/*swap();
+	swap();
 	replace();*/
+	for(int i = 0; i < dictionary_.size(); i++){
+		std::string currentElement = dictionary_[i];
+		int lastIndex = currentElement.size()-1;
+		char lastChar = currentElement[lastIndex];
+		std::cout << "--------" << std::endl;
+		std::cout << "Element: " << currentElement << std::endl; 
+		std::cout << "Length: " << currentElement.size() << std::endl;
+		std::cout << "Last Element: " << currentElement[lastIndex] << std::endl;
+		std::cout << "Last Character: " << lastChar + 1 << std::endl;
+		std::cout << "--------" << std::endl;
+	}
 }
 
 void SpellChecker::checkSpelling() {
@@ -49,6 +60,7 @@ void SpellChecker::insertion() {
 					if (currentWord == dictionary_[i]) {
 						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
+						std::cout << "Insertion(): " << fixedWords_.size() << std::endl;
 						break;
 					}
 				}
@@ -61,13 +73,15 @@ void SpellChecker::insertion() {
 
 void SpellChecker::deletion() {
 	for (int wordIndex = 0; wordIndex < incorrectWords_.size(); wordIndex++) {
-		for (int wordPos = 0; wordPos <= incorrectWords_[wordIndex].size(); wordPos++) {
+		for (int wordPos = 0; wordPos < incorrectWords_[wordIndex].size(); wordPos++) {
 			std::string currentWord = incorrectWords_[wordIndex];
 			currentWord.erase(currentWord.begin() + wordPos);
+			//std::cout << "CurrentWord " << currentWord << "/" << "WordIndex " << wordIndex << "/" << "WordPos " << wordPos << "Length: " << incorrectWords_[wordIndex].size() << std::endl;
 			for (int i = 0; i < dictionary_.size(); i++) {
 				if (currentWord == dictionary_[i]) {
 					//std::cout << currentWord << std::endl;
 					fixedWords_.push_back(currentWord);
+					std::cout << "Deletion(): " << fixedWords_.size() << std::endl;
 					break;
 				}
 			}
@@ -94,6 +108,7 @@ void SpellChecker::swap() {
 					if (currentWord == dictionary_[i]) {
 						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
+						std::cout << "Swap(): " << fixedWords_.size() << std::endl;
 						break;
 					}
 				}
@@ -113,6 +128,7 @@ void SpellChecker::replace() {
 					if (currentWord == dictionary_[i]) {
 						//std::cout << currentWord << std::endl;
 						fixedWords_.push_back(currentWord);
+						std::cout << "Replace(): " << fixedWords_.size() << std::endl;
 						break;
 					}
 				}
