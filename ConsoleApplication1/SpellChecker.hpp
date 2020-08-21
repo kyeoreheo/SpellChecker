@@ -16,7 +16,7 @@ public:
     void deletion(const std::string& currentIncorrectWord);
     void swap(const std::string& currentIncorrectWord);
     void replace(const std::string& currentIncorrectWord);
-    std::vector<std::string> fixedWords_;
+    //std::vector<std::string> fixedWords_;
 
 private:
     std::vector<std::string> dictionary_;
