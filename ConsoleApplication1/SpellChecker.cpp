@@ -41,7 +41,7 @@ void SpellChecker::insertion(const std::string& currentIncorrectWord) {
 			currentWord.insert(wordPos, charToString);
 			for (int i = 0; i < dictionary_.size(); i++) {
 				if (currentWord == dictionary_[i]) {
-					fixedWords_.push_back(currentWord);
+					//fixedWords_.push_back(currentWord);
 					tempAns += currentWord;
 					tempAns += ", ";
 					break;
