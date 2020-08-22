@@ -33,10 +33,6 @@ void DataReader::readDic() {
         }
         file.close();
     }
-/*    for(int i = 0; i < 100; i++){
-    	std::cout << "Word: " << dictionary[i] << std::endl;
-    	std::cout << " Size: " << dictionary[i].size() << std::endl;
-    }*/
 }
 
 void DataReader::readUserText() {
@@ -55,7 +51,7 @@ void DataReader::readUserSeparator(const std::string& inputLine) {
     std::string temp = "";
     for (int i = 0; i < inputLine.size(); i++) {
         char currentChar = inputLine[i];
-        if (isAlphabet(currentChar) && !hasSpecChar(currentChar)) {
+        if (isAlphabet(currentChar)) {
             temp += inputLine[i];
         }
         else if (temp.size() > 0) {

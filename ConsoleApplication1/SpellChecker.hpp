@@ -16,11 +16,13 @@ public:
     void deletion(const std::string& currentIncorrectWord);
     void swap(const std::string& currentIncorrectWord);
     void replace(const std::string& currentIncorrectWord);
-    //std::vector<std::string> fixedWords_;
+    std::vector<std::string> fixedWords_;
 
 private:
     std::vector<std::string> dictionary_;
-    std::vector<std::string> userInputWords_;    
+    std::vector<std::string> userInputWords_;
+    std::string answer_;
+    bool hasFoundAns_;
 };
 #include "SpellChecker.cpp"
 #endif /* SpellCheck_hpp */
