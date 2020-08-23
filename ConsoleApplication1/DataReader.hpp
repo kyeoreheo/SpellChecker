@@ -24,7 +24,7 @@ private:
 	bool hasSpecChar(const char& inputChar) const;
 
 	std::string lowerCase(const std::string& inputString) const;
-
+	std::string originalWord_;
 	std::string userTextFileName_;
 	std::string dicFileName_;
 	std::string line_;

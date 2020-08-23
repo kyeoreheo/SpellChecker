@@ -11,6 +11,7 @@ SpellChecker::SpellChecker(const std::vector<std::string>& inputDictionary, std:
 	dictionary_ = inputDictionary;
 	userInputWords_ = userInput;
 	checkSpelling();
+	createAnsFile();
 }
 
 void SpellChecker::checkSpelling() {
@@ -144,4 +145,10 @@ void SpellChecker::replace(const std::string& currentIncorrectWord) {
 		std::cout << tempAns;
 		std::cout << ")" << std::endl;
 	}
+}
+
+void SpellChecker::createAnsFile(){
+	std::ofstream myAnsFile("Result.txt");
+	myAnsFile << answer_;
+	myAnsFile.close();
 }
