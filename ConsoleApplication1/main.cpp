@@ -13,5 +13,6 @@ int main()
     DataReader myDataReader(strText, strDictionary);
 
     SpellChecker mySpellChecker(myDataReader.dictionary, myDataReader.userWords);
+
     return 0;
 }

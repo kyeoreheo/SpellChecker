@@ -22,7 +22,9 @@ private:
 
     std::vector<std::string> fixedWords_;
     std::vector<std::string> dictionary_;
-    std::vector<std::string> userInputWords_;    
+    std::vector<std::string> userInputWords_;
+    std::string answer_;
+    bool hasFoundAns_;
 };
 #include "SpellChecker.cpp"
 #endif /* SpellCheck_hpp */
