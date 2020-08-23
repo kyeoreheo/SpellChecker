@@ -19,9 +19,18 @@ void SpellChecker::checkSpelling() {
 		bool isInDictionary = false;
 		for (int j = 0; j < dictionary_.size(); j++) {
 			if (userInputWords_[i] == dictionary_[j] || userInputWords_[i] == "i") {
+				if(userInputWords_[i] == "i"){
+					answer_ += "I";
+				}
+				else{
+					answer_ += userInputWords_[i];
+				}
+
+				if(i != userInputWords_.size()-1){
+					answer_ += " ";
+				}
 				isInDictionary = true;
-				answer_ += userInputWords_[i];
-				answer_ += " ";
+				
 				break;
 			}
 		}
@@ -162,6 +171,8 @@ void SpellChecker::replace(const std::string& currentIncorrectWord) {
 
 void SpellChecker::createAnsFile(){
 	std::ofstream myAnsFile("Result.txt");
+	myAnsFile << "Jason\nGithub Address: https://github.com/mynamejason/SpellChecker\nEmail: ykim4141@gmail.com\n\n";
 	myAnsFile << answer_;
+	myAnsFile << ".";
 	myAnsFile.close();
 }
