@@ -38,8 +38,8 @@ void SpellChecker::checkSpelling() {
 		}		
 		
 		if(!isInDictionary) {
-			answer_ += user;
-			InputWords_[i];
+			answer_ += userInputWords_[i];
+			userInputWords_[i];
 			answer_ += "(";
 
 			insertion(userInputWords_[i]);
