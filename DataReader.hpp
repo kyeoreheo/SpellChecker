@@ -15,7 +15,7 @@ public:
 	std::vector<std::string> userWords;	
 
 private:
-	void readDic(); //read the inputfile
+	void readDic();
 	void readUserText();
 	void readUserSeparator(const std::string& inputLine);
 	bool isAlphabet(const char& inputChar);

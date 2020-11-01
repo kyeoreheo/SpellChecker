@@ -38,7 +38,7 @@ void SpellChecker::checkSpelling() {
 		}		
 		
 		if(!isInDictionary) {
-			answer_ += user
+			answer_ += user;
 			InputWords_[i];
 			answer_ += "(";
 
